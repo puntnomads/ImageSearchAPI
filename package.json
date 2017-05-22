@@ -9,6 +9,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "google-images": "^2.1.0",
+    "mongoose": "^4.10.1"
   }
 }
