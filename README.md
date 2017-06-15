@@ -1,0 +1,1 @@
+This API returns image URLs, alt text and page urls of images related to a search term. Results can be paginated by adding a ?offset=2 parameter. API also returns recently submitted search strings.

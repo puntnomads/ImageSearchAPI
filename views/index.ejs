@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timestamp API</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <div>
+    <h1>Timestamp API</h1>
+    <p>This API returns image URLs, alt text and page urls of images related to a search term. Results can be paginated by adding a ?offset=2 parameter. API also returns recently submitted search strings.</p>
+    <h3>Example usage:</h3>
+    <code>https://image-search-backends.herokuapp.com/api/imagesearch/lolcats</code>
+    <h3>Example output:</h3>
+    <code>"[
+  {
+    "url": "https://cdn.theatlantic.com/static/mt/assets/science/lolcat-crocs.jpg",
+    "snippet": "Are LOLCats Making Us Smart? - The Atlantic",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK8KYFw13RdHOPsIjs8-mFTLd2xTISf7SF2nEJb1kWXXPcZuzWiZwMM6M-",
+    "context": "https://www.theatlantic.com/technology/archive/2012/05/are-lolcats-making-us-smart/256830/"
+  }
+]"</code>
+    <p>API returns 10 results but 1 shown for convenience.</p>
+    <h3>Example usage:</h3>
+    <code>https://image-search-backends.herokuapp.com/api/imagesearch/lolcats%20funny?offset=10</code>
+    <h3>Example output:</h3>
+    <code>"[
+  {
+    "url": "https://i.ytimg.com/vi/8nOsEEBrEuA/hqdefault.jpg",
+    "snippet": "LOLCats in All Fired Up lol Cats Rock Funny Cats - YouTube",
+    "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuWNpmeNmLlMNc0v32tK83j4eOrOPVS6M2kty-CVFzQTvbS9d9WdKfrg7E",
+    "context": "https://www.youtube.com/watch?v=8nOsEEBrEuA"
+  }
+]"</code>
+    <p>API returns 10 results but 1 shown for convenience.</p>
+    <h3>Example usage:</h3>
+    <code>https://image-search-backends.herokuapp.com/api/latest/imagesearch/</code>
+    <h3>Example output:</h3>
+    <code>"[
+  {
+    "term": "lolcats",
+    "when": "2017-06-15T13:29:40.840Z"
+  },
+  {
+    "term": "lolcats funny",
+    "when": "2017-06-15T13:23:00.345Z"
+  }
+  ]"</code>
+  <p>API returns 10 results but 2 shown for convenience.</p>
+  </div>
+</body>
+</html>

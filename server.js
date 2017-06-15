@@ -1,17 +1,22 @@
 var express = require('express');
+var path = require('path');
 var app = express();
 var mongoose = require('mongoose');
 var Term = require('./term');
 const GoogleImages = require('google-images');
-const client = new GoogleImages(process.env.CSE_ID, process.env.API_KEY); 
+const client = new GoogleImages(process.env.CSE_ID, process.env.API_KEY);
+
+app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', function (req, res) {
+  res.render('index');
+})
 
 var url = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/image_search';
 mongoose.Promise = global.Promise;
 mongoose.connect(url);
-
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
 
 app.get('/api/imagesearch/:query', function (req, res) {
 var query = req.params.query;
